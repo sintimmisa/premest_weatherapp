@@ -8,13 +8,32 @@ function App() {
   const APIKEY ='634096fa5afe534945c732e821e53d6a'
 
   async function fetchData(e) {
+
+    const city = e.target.elements.city.value
+    const country = e.target.elements.country.value
     e.preventDefault()
 
-    const apiData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=${APIKEY}`).then(res => res.json()).then(data => data)
-    setWeather({
-      data: apiData,
+    const apiData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${APIKEY}`).then(res => res.json()).then(data => data)
+    if (city && country) {
+      setWeather({
+        data: apiData,
+        city: apiData.city,
+        country: apiData.sys.country,
+        description: apiData.weather[0].description,
+        temperature: apiData.main.temp,
+        error: ""
       
-    })
+      })
+    } else {
+      setWeather({
+        data: '',
+        city: '',
+        country: '',
+        description: '',
+        temperature: '',
+        error: "Please Type A City And Country"
+      })
+    }
   }
   return (
     <div className="App">
@@ -22,9 +41,15 @@ function App() {
         <h1>Weather App</h1>
         <Form getWeather={fetchData}/>
         {console.log(weather.data)}
-        <main>{
-          /* add weather fatchig component*/
-        }</main>
+        <main>
+          <Weather
+            city={weather.city}
+            country={weather.country}
+            description={weather.description}
+            temperature={weather.temperature}
+            error={weather.error}
+          />
+        </main>
       </header>
     </div>
   );
