@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Weather = ({ description, city, country, error, temperature }) => {
+const Weather = ({ description, location, country, error, temperature }) => {
 
-    if (description) {
+    {/*if (description) {
         const weatherDescription = description.split(' ')
         const keyWords = ['cloudy', 'clouds', 'cloud', 'overcast']
         for (let i = 0; i < weatherDescription.length; i++) {
@@ -11,12 +11,12 @@ const Weather = ({ description, city, country, error, temperature }) => {
             }
         }
         console.log(keyWords)
-        console.log(weatherDescription)
+    console.log(weatherDescription)*/}
 
-    }
+    
     return (
         <div>
-            {city && country && <p>{city}, {country}</p>}
+            {location && country && <p>{location}, {country}</p>}
             {temperature && <p>{temperature}</p>}
             {description && <p> {description}</p>}
             {error && <p>{error}</p>}

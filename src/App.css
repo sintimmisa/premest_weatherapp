@@ -24,8 +24,29 @@ main {
   min-height: 62.6399vh;
   width:100%;
   color: #282c34;
-  font-size: 3rem;;
+  
 }
+.location
+{
+  padding:1rem;
+  
+}
+.col-md-12{
+  width:100%;
+}
+.col-md-3{
+margin: .5rem;
+}
+.card{
+  width:100%;
+  height:10rem;
+  
+}
+.card-title > span{
+  font-size:10rem;
+  font-weight:bold;
+}
+
 footer {
   background-color: #282c34;
   padding: 2px;

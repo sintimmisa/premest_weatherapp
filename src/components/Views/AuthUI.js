@@ -5,7 +5,9 @@ import React from 'react';
 const AuthUI = () => {
     
     return (
-        <div>This is the Auth UI</div>
+        <div>
+            
+        </div>
     )
 }
 export default AuthUI;
