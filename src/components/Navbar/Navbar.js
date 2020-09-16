@@ -11,6 +11,11 @@ const Navbar = () => {
         </Link>
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav ml-auto">
+          <li className="nav-item">
+              <Link to={"/weather"} className="nav-link">
+                Get Weather
+              </Link>
+            </li>
             <li className="nav-item">
               <Link to={"/login"} className="nav-link">
                 Login

@@ -5,7 +5,7 @@ import React from 'react';
 const HomeUI = () => {
     
     return (
-        <div>
+        <div className="home-container">
             <h2> Not logged In</h2>
         </div>
     )

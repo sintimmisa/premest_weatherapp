@@ -84,7 +84,7 @@ const WeatherUI = () => {
   }
   return (
    
-      <div className="App">
+      <div className="weather-container">
         <header className="App-header">
           <h1>Weather App</h1>
           <Form getWeather={fetchData} />

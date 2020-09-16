@@ -2,9 +2,15 @@ import React from 'react';
 
 
 const LoginForm = () => {
+
+    const handleSubmit = (e) => {
+        e.preventDefault();;
+      
+        console.log("works");
+    }
     
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <h3>Login</h3>
             <div className="form-group">
                 <label>Username</label>
